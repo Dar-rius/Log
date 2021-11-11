@@ -1,0 +1,49 @@
+<h1>Marhe</h1>
+
+<% genre= ['Homme', 'Femme', 'pas precise'] 
+ countries= ['Mali', 'Senegal', 'Autres..'] %>
+
+<div>
+    <%= form_with model: @auth do |form| %>
+        <p>
+            <%= form.label "Adresse mail"%>
+            <%= form.email_field :email%>
+        </p>
+
+        <p>
+            <%= form.label "Nom"%>
+            <%= form.text_field :name%>
+        </p>
+
+        <p>
+            <%= form.label "prenom"%>
+            <%= form.text_field :first_name%>
+        </p>
+
+        <p>
+            <%= form.label "Mot de passe"%>
+            <%= form.password_field :password%>
+        </p>
+
+        <p>
+            <%= form.label "Mot de passe"%>
+            <%= form.password_field :password%>
+        </p>
+
+        <p>
+            <%= form.label "genre"%>
+            <%= form.select :gender, genre, selected:genre[-1] %>
+        </p>
+
+        <p>
+            <%= form.label "pays"%>
+            <%= form.select :country, countries, selected:countries[-1] %>
+        </p>
+
+        <p>
+            <%= form.submit %>
+        </p>
+
+    <% end %>
+</div>
+
