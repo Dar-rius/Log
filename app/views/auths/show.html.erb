@@ -1,6 +1,21 @@
-<h1> Vos Data</h1>
+<div class="connect">
+    <h1> Merci pour votre connexion</h1>
 
-<div>
-    <%= @auth.first_name %>
-   <%= @auth.name %>
+    <div>
+        Prenom et nom: 
+        <%= @auth.first_name %>
+    <%= @auth.name %>
+    </div>
+
+    <div>
+        Sexe: 
+        <%= @auth.gender%>
+    </div>
+
+    <div> 
+        Pays: 
+        <%= @auth.country%>
+    </div>
+
+    <%= link_to "page d'accueille", root_path %>
 </div>

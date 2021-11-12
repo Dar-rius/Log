@@ -1,9 +1,9 @@
-<h1>Marhe</h1>
+<h1 id="title">Inscription</h1>
 
 <% genre= ['Homme', 'Femme', 'pas precise'] 
  countries= ['Mali', 'Senegal', 'Autres..'] %>
 
-<div>
+<div class="contain">
     <%= form_with model: @auth do |form| %>
         <p>
             <%= form.label "Adresse mail"%>
@@ -23,11 +23,13 @@
         <p>
             <%= form.label "Mot de passe"%>
             <%= form.password_field :password%>
-        </p>
-
-        <p>
-            <%= form.label "Mot de passe"%>
-            <%= form.password_field :password%>
+            <%@auth.errors.full_messages_for(:password).each do |message|%>
+                <%if :password.length < 8 %>
+                    <div> <%=message %> </div>
+                <%else %>
+                    <div>C'est correcte</div>
+                <% end %>
+            <% end %>
         </p>
 
         <p>
@@ -41,7 +43,7 @@
         </p>
 
         <p>
-            <%= form.submit %>
+            <%= form.submit "Creer un compte" %>
         </p>
 
     <% end %>

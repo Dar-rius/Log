@@ -1,19 +1,19 @@
-<h1> Connect </h1>
+<h1> Connecxion </h1>
 
 <div>
-    <%= form_with model: @user do |form| %>
+    <%= form_with url: logins_path do |form| %>
         <p>
-            <%= form.label "Aderesse mail" %>
-            <%= form.email_field :email %>
+            <%= form.label "Aderesse mail: " %>
+            <%= form.email_field :email, id: 'email' %>
         </p>
 
         <p>
-            <%= form.label "Mot de passe" %>
-            <%= form.password_field :password %>
+            <%= form.label "Mot de passe: " %>
+            <%= form.password_field :password, id:'password'%>
         </p>
 
         <p>
-            <%= form.submit "connect"%>
+            <%= form.submit "connecter"%>
         </p>
     <% end %>
 </div>
